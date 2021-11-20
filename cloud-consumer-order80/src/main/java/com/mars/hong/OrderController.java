@@ -19,13 +19,13 @@ public class OrderController {
     public Envelope<Payment> createPayment() {
 
         Envelope<Long> envelope = restTemplate.postForObject(
-                "http://localhost:8002/payments",
+                "http://CLOUD-PAYMENT-SERVICE/payments",
                 null,
                 Envelope.class
                 );
 
         return restTemplate.getForObject(
-                "http://localhost:8002/payments/" + envelope.getResource(),
+                "http://CLOUD-PAYMENT-SERVICE/payments/" + envelope.getResource(),
                 Envelope.class
                 );
     }
