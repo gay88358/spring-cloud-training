@@ -1,7 +1,0 @@
-# client side end point
-server:
-  port: 80
-spring:
-  application:
-    name: cloud-order-service
-
