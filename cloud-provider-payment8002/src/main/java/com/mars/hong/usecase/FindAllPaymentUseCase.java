@@ -1,7 +1,7 @@
 package com.mars.hong.usecase;
 
-import com.mars.hong.adapter.PaymentResponse;
 import com.mars.hong.common.Result;
+import com.mars.hong.adapter.PaymentResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 

@@ -1,5 +1,6 @@
 package com.mars.hong.common;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -8,3 +9,4 @@ import lombok.Getter;
 public class Result<T> {
     private T value;
 }
+
