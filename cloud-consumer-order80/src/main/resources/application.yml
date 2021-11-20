@@ -11,5 +11,8 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka, http://eureka7002.com:7002/eureka # register payment with eureka cluster
+  instance:
+    instance-id: order80
+    prefer-ip-address: true
 # we need to modify host file with mapping, mapping from 127.0.0.1 to eureka7001.com, 127.0.0.1 to eureka7002.com
 # file location: sudo nano private/etc/hosts
