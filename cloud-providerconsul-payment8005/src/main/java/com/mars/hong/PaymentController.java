@@ -8,11 +8,12 @@ import java.util.UUID;
 
 @RestController
 public class PaymentController {
+
     @Value("${server.port}")
     private String ip;
 
-    @GetMapping(value = "/payments/zk")
-    public String paymentZk() {
-        return "spring cloud with zookeeper: " + ip + UUID.randomUUID().toString();
+    @GetMapping("/payments/consul")
+    String paymentConsul() {
+        return "spring cloud consul payment, server port is: " + ip + " " + UUID.randomUUID().toString();
     }
 }
