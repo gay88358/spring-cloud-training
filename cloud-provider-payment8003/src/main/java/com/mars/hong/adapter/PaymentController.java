@@ -26,24 +26,29 @@ public class PaymentController {
     }
 
     @Value("${server.port}")
-    private String ip;
+    private String serverPort;
 
     @PostMapping("/payments")
     public Envelope<Long> createPayment() {
         Result<Long> result = this.createPaymentUseCase.execute(new CreatePaymentInput("123123"));
-        return new Envelope<>(200, String.format("create success, server port: %s", ip), result.getValue());
+        return new Envelope<>(200, String.format("create success, server port: %s", serverPort), result.getValue());
     }
 
     @GetMapping("/payments/{id}")
     public Envelope<PaymentResponse> findPayment(@PathVariable Long id) {
         Result<PaymentResponse> result = this.findPaymentUseCase.execute(new FindPaymentInput(id));
-        return new Envelope<>(200, String.format("find payment success, server port: %s", ip), result.getValue());
+        return new Envelope<>(200, String.format("find payment success, server port: %s", serverPort), result.getValue());
     }
 
     @GetMapping("/payments")
     public Envelope<List<PaymentResponse>> findAllPayment() {
         Result<List<PaymentResponse>> result = this.findAllPaymentUseCase
                 .execute(new FindAllPaymentInput());
-        return new Envelope<>(200, String.format("find all payment success, server port: %s", ip), result.getValue());
+        return new Envelope<>(200, String.format("find all payment success, server port: %s", serverPort), result.getValue());
+    }
+
+    @GetMapping("/payments/lb")
+    public String getPaymentLB() {
+        return serverPort;
     }
 }
