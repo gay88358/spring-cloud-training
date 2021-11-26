@@ -44,12 +44,9 @@ public class PaymentService {
             }
     )
     public String paymentCircuitBreaker(Long id) {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        if (id < 0) {
+            throw new RuntimeException("paymentCircuitBreaker");
         }
-
         String serialNumber = UUID.randomUUID().toString();
         return Thread.currentThread().getName() + " invoke success: " + serialNumber;
     }
