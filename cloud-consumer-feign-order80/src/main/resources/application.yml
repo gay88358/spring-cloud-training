@@ -1,6 +1,7 @@
 server:
   port: 80
 
+
 spring:
   application:
     name: cloud-order-service
@@ -15,3 +16,14 @@ eureka:
   instance:
     instance-id: order80
     prefer-ip-address: true
+
+
+# which can modify read timeout and connect timeout so that the long business transaction didn't encounter timeout
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
+
+
+logging:
+  level:
+    com.mars.hong.PaymentFeignService: debug

@@ -11,4 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface PaymentFeignService {
     @GetMapping("/payments/{id}")
     Envelope<Payment> findPayment(@PathVariable("id") Long id);
+
+    @GetMapping("/payments/feign/timeout")
+    String paymentFeignTimeout();
 }

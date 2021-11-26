@@ -21,5 +21,10 @@ public class OrderController {
         return this.paymentFeignService.findPayment(id);
     }
 
+    @GetMapping("/consumer/payments/feign/timeout")
+    public String paymentFeignTimeout() {
+        return this.paymentFeignService.paymentFeignTimeout();
+    }
+
 
 }

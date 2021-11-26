@@ -1,20 +1,17 @@
 package com.mars.hong;
 
-import feign.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.openfeign.EnableFeignClients;
-import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
+@EnableEurekaClient
 @EnableFeignClients
-public class OrderApplicationOpenFeign80 {
+@EnableHystrix
+public class HystrixOrderApplication80 {
     public static void main(String[] args) {
-        SpringApplication.run(OrderApplicationOpenFeign80.class, args);
-    }
-
-    @Bean
-    public feign.Logger.Level feignLoggerLevel() {
-        return Logger.Level.FULL;
+        SpringApplication.run(HystrixOrderApplication80.class, args);
     }
 }

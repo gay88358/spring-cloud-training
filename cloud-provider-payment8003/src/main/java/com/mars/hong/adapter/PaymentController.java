@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 public class PaymentController {
@@ -50,5 +51,16 @@ public class PaymentController {
     @GetMapping("/payments/lb")
     public String getPaymentLB() {
         return serverPort;
+    }
+
+
+    @GetMapping("/payments/feign/timeout")
+    public String paymentFeignTimeout() {
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return this.serverPort;
     }
 }
