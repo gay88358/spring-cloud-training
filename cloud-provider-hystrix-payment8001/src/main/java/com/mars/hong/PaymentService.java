@@ -53,6 +53,5 @@ public class PaymentService {
 
     public String paymentCircuitBreakerFallback(Long id) {
         return " Id can't be negative";
-
     }
 }
