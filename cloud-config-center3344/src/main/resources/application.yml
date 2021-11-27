@@ -13,6 +13,11 @@ spring:
           search-paths:
             - spring-cloud-config
       label: master
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 
 eureka:
@@ -21,3 +26,10 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "bus-refresh"
