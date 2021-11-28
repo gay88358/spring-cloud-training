@@ -12,6 +12,7 @@ spring:
           uri: https://github.com/gay88358/spring-cloud-config.git
           search-paths:
             - spring-cloud-config
+            - myorder
       label: master
   rabbitmq:
     host: localhost
