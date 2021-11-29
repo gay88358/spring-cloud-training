@@ -43,4 +43,15 @@ public class OrderController {
                 String.class
         );
     }
+
+    @GetMapping("/consumer/payments/zipkin")
+    public String getPaymentZipKin() {
+        ServiceInstance serviceInstance = loadBalancer.instance("CLOUD-PAYMENT-SERVICE");
+        URI uri = serviceInstance.getUri();
+
+        return restTemplate.getForObject(
+                uri + "payments/zipkin",
+                String.class
+        );
+    }
 }
