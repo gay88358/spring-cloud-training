@@ -1,10 +1,10 @@
 server:
-  port: 8802
+  port: 8803
 
 
 spring:
   application:
-    name: cloud-stream-consumer
+    name:  cloud-stream-consumer
   cloud:
     stream:
       binders:
@@ -22,7 +22,7 @@ spring:
           destination: studyExchange
           content-type: application/json
           binder: defaultRabbit
-#          group: A
+          group: A
 
 
 eureka:
@@ -34,6 +34,3 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id: receive.8802.com
-#    lease-renewal-interval-in-seconds: 2
-#    lease-expiration-duration-in-seconds: 5
-
