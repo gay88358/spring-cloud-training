@@ -8,12 +8,12 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: localhost:9999
+        server-addr: localhost:1111
       config:
-        server-addr: localhost:9999
+        server-addr: localhost:1111
         file-extension: yaml
-        group: DEV_GROUP
-        namespace: 9aa93c8a-51da-46cd-bd88-7db0e53f0f5f
+#        group: DEV_GROUP
+#        namespace: 9aa93c8a-51da-46cd-bd88-7db0e53f0f5f
 
 
 
